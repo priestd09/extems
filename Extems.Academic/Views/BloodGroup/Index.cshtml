@@ -1,0 +1,42 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Blood Groups";
+    Layout = ViewBag.Layout;
+}
+
+<script>
+    var scrudFactory = new Object();
+
+    scrudFactory.title = "Blood Groups";
+
+    scrudFactory.viewAPI = "/api/academic/blood-group";
+    scrudFactory.viewTableName = "academic.blood_groups";
+
+    scrudFactory.formAPI = "/api/academic/blood-group";
+    scrudFactory.formTableName = "academic.blood_groups";
+
+    scrudFactory.disabledOnEdit = ["AuthorId"];
+    scrudFactory.excludedColumns = ["AuditUserId", "AuditTs"];
+    scrudFactory.hiddenColumns = ["IsDeleted", "IsActive"];
+
+    scrudFactory.allowDelete = true;
+    scrudFactory.allowEdit = true;
+
+    scrudFactory.live = "BloodGroupCode";
+
+    scrudFactory.layout = [
+        {
+            tab: "",
+            fields: [
+                ["BloodGroupId", ""],
+                ["BloodGroupCode", "BloodGroupName"]
+            ]
+        }
+    ];
+
+</script>
+
+
+<div data-ng-include="'/ScrudFactory/View.html'"></div>
+<div data-ng-include="'/ScrudFactory/Form.html'"></div>

@@ -1,0 +1,43 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Genders";
+    Layout = ViewBag.Layout;
+}
+
+<script>
+    var scrudFactory = new Object();
+
+    scrudFactory.title = "Genders";
+
+    scrudFactory.viewAPI = "/api/academic/gender";
+    scrudFactory.viewTableName = "academic.genders";
+
+    scrudFactory.formAPI = "/api/academic/gender";
+    scrudFactory.formTableName = "academic.genders";
+
+    scrudFactory.disabledOnEdit = ["AuthorId"];
+    scrudFactory.excludedColumns = ["AuditUserId", "AuditTs", "IsDeleted"];
+    scrudFactory.hiddenColumns = ["IsDeleted", "IsActive"];
+
+    scrudFactory.allowDelete = true;
+    scrudFactory.allowEdit = true;
+
+    scrudFactory.live = "GenderName";
+
+    scrudFactory.layout = [
+        {
+            tab: "",
+            fields: [
+                ["GenderId", ""],
+                ["GenderCode", ""],
+                ["GenderName",""]
+            ]
+        }
+    ];
+
+</script>
+
+
+<div data-ng-include="'/ScrudFactory/View.html'"></div>
+<div data-ng-include="'/ScrudFactory/Form.html'"></div>

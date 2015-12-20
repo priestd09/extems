@@ -1,0 +1,23 @@
+{
+	"ApplicationName": "Extems.Academic",
+	"AutoInstall": false,
+	"Thumbnail": null,
+	"Publisher": "MixERP Inc.",
+	"Url": "http://extems.com",
+	"DocumentationUrl": "http://docs.extems.com",
+	"AssemblyName": "Extems.Academic",
+	"Version": "1.0",
+	"RealeasedOn": null,
+	"Description": "Core academic module for extems.",
+	"Category": "Extems",
+	"Bundle": "Extems",
+    "IsMeta": false,
+	"DbSchema": "academic",
+	"BlankDbPath": "~/Areas/Extems.Academic/db/1.x/1.0/db-blank.sql",
+	"SampleDbPath": "~/Areas/Extems.Academic/db/1.x/1.0/db-sample.sql",
+	"InstallSample": true,
+	"My": null,
+    "OverrideTemplatePath":null,
+    "OverrideDestination":null,
+	"DependsOn": ["Frapid.Config", "Frapid.WebsiteBuilder"]
+}

@@ -1,0 +1,43 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Class Shifts";
+    Layout = ViewBag.Layout;
+}
+
+<script>
+    var scrudFactory = new Object();
+
+    scrudFactory.title = "Class Shifts";
+
+    scrudFactory.viewAPI = "/api/academic/class-shift";
+    scrudFactory.viewTableName = "academic.class_shifts";
+
+    scrudFactory.formAPI = "/api/academic/class-shift";
+    scrudFactory.formTableName = "academic.class_shifts";
+
+    scrudFactory.disabledOnEdit = ["AuthorId"];
+    scrudFactory.excludedColumns = ["AuditUserId", "AuditTs"];
+    scrudFactory.hiddenColumns = ["IsDeleted"];
+
+    scrudFactory.allowDelete = true;
+    scrudFactory.allowEdit = true;
+
+    scrudFactory.live = "ClassShiftName";
+
+    scrudFactory.layout = [
+        {
+            tab: "",
+            fields: [
+                ["ClassShiftId", ""],
+                ["ClassShiftCode", ""],
+                ["ClassShiftName", ""]
+            ]
+        }
+    ];
+
+</script>
+
+
+<div data-ng-include="'/ScrudFactory/View.html'"></div>
+<div data-ng-include="'/ScrudFactory/Form.html'"></div>

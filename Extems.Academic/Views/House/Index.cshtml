@@ -1,0 +1,44 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Houses";
+    Layout = ViewBag.Layout;
+}
+
+<script>
+    var scrudFactory = new Object();
+
+    scrudFactory.title = "Houses";
+
+    scrudFactory.viewAPI = "/api/academic/house";
+    scrudFactory.viewTableName = "academic.houses";
+
+    scrudFactory.formAPI = "/api/academic/house";
+    scrudFactory.formTableName = "academic.houses";
+
+    scrudFactory.disabledOnEdit = ["AuthorId"];
+    scrudFactory.excludedColumns = ["AuditUserId", "AuditTs"];
+    scrudFactory.hiddenColumns = ["IsDeleted", "IsActive"];
+
+    scrudFactory.allowDelete = true;
+    scrudFactory.allowEdit = true;
+
+    scrudFactory.live = "HouseName";
+
+    scrudFactory.layout = [
+        {
+            tab: "",
+            fields: [
+                ["HouseId", ""],
+                ["HouseCode", ""],
+                ["HouseName", ""],
+                ["ClassId",""]
+            ]
+        }
+    ];
+
+</script>
+
+
+<div data-ng-include="'/ScrudFactory/View.html'"></div>
+<div data-ng-include="'/ScrudFactory/Form.html'"></div>

@@ -1,0 +1,42 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Batches";
+    Layout = ViewBag.Layout;
+}
+
+<script>
+    var scrudFactory = new Object();
+
+    scrudFactory.title = "Batches";
+
+    scrudFactory.viewAPI = "/api/academic/batch";
+    scrudFactory.viewTableName = "academic.batches";
+
+    scrudFactory.formAPI = "/api/academic/batch";
+    scrudFactory.formTableName = "academic.batches";
+
+    scrudFactory.disabledOnEdit = ["AuthorId"];
+    scrudFactory.excludedColumns = ["AuditUserId", "AuditTs"];
+    scrudFactory.hiddenColumns = ["IsDeleted", "IsActive"];
+
+    scrudFactory.allowDelete = true;
+    scrudFactory.allowEdit = true;
+
+    scrudFactory.live = "BatchName";
+
+    scrudFactory.layout = [
+        {
+            tab: "",
+            fields: [
+                ["BatchId", ""],
+                ["BatchName", "BatchCode"]
+            ]
+        }
+    ];
+
+</script>
+
+
+<div data-ng-include="'/ScrudFactory/View.html'"></div>
+<div data-ng-include="'/ScrudFactory/Form.html'"></div>
