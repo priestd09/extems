@@ -1,20 +1,20 @@
 ﻿@model dynamic
 
 @{
-    ViewBag.Title = "Courses";
+    ViewBag.Title = "Batches";
     Layout = ViewBag.Layout;
 }
 
 <script>
     var scrudFactory = new Object();
 
-    scrudFactory.title = "Courses";
+    scrudFactory.title = "Batches";
 
-    scrudFactory.viewAPI = "/api/academic/course";
-    scrudFactory.viewTableName = "academic.courses";
+    scrudFactory.viewAPI = "/api/academic/batch";
+    scrudFactory.viewTableName = "academic.batches";
 
-    scrudFactory.formAPI = "/api/academic/course";
-    scrudFactory.formTableName = "academic.courses";
+    scrudFactory.formAPI = "/api/academic/batch";
+    scrudFactory.formTableName = "academic.batches";
 
     scrudFactory.disabledOnEdit = ["AuthorId"];
     scrudFactory.excludedColumns = ["AuditUserId", "AuditTs"];
@@ -23,24 +23,15 @@
     scrudFactory.allowDelete = true;
     scrudFactory.allowEdit = true;
 
-    scrudFactory.live = "CourseName";
+    scrudFactory.live = "BatchName";
 
     scrudFactory.layout = [
         {
             tab: "",
             fields: [
-                ["CourseId"]
+                ["BatchId", ""],
+                ["BatchName", "BatchCode"]
             ]
-        }
-    ];
-
-    scrudFactory.keys = [
-        {
-            property: "AcademicLevelId",
-            url: '/api/academic/academic-level/display-fields',
-            data: null,
-            valueField: "Key",
-            textField: "Value"
         }
     ];
 
